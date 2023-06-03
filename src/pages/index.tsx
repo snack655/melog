@@ -31,7 +31,12 @@ export async function getStaticProps() {
       revalidate: 1,
     }
   } catch (error) {
-    throw error
+    return {
+      props: {
+        tags: [],
+        posts: [],
+      },
+    }
   }
 }
 
