@@ -18,6 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
+<<<<<<< HEAD
     title: "melog",
     description: "welcome to melog!",
     theme: "auto", // ['light', 'dark', 'auto']
@@ -31,6 +32,17 @@ const CONFIG = {
   seo: {
     keywords: ["Blog", "Website", "Notion", "Melog", "Android"],
   },
+=======
+    title: "morethan-log",
+    description: "welcome to morethan-log!",
+  },
+
+  // CONFIG configration (required)
+  link: "https://morethan-log.vercel.app",
+  since: 2022, // If leave this empty, current year will be used.
+  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
+>>>>>>> upstream/main
 
   // notion configuration (required)
   notionConfig: {
@@ -50,10 +62,20 @@ const CONFIG = {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
+  naverSearchAdvisor: {
+    enable: false,
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
+    },
+  },
   utterances: {
     enable: true,
     config: {
+<<<<<<< HEAD
       repo: "snack655/melog",
+=======
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+>>>>>>> upstream/main
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
@@ -66,6 +88,7 @@ const CONFIG = {
     },
   },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
+  revalidateTime: 21600 * 7, // revalidate time for [slug], index
 }
 
 module.exports = { CONFIG }
